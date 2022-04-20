@@ -11,10 +11,37 @@ const MockFollowersList = () => {
 };
 
 describe("FollowersList", () => {
+  beforeAll(() => {
+    console.log("RAN ONCE BEFORE ALL THE TESTS");
+  });
+
+  beforeEach(() => {
+    console.log("RUNNING BEFORE EACH TEST");
+  });
+
+  afterEach(() => {
+    console.log("RUNNING AFTER EACH TEST");
+  });
+
+  afterAll(() => {
+    console.log("RAN ONCE AFTER ALL THE TESTS");
+  });
+
   it("should render Follower item", async () => {
     render(<MockFollowersList />);
     const followerDivElement = await screen.findByTestId("follower-item-0");
-    screen.debug;
+    expect(followerDivElement).toBeInTheDocument();
+  });
+
+  it("should render Follower item", async () => {
+    render(<MockFollowersList />);
+    const followerDivElement = await screen.findByTestId("follower-item-0");
+    expect(followerDivElement).toBeInTheDocument();
+  });
+
+  it("should render Follower item", async () => {
+    render(<MockFollowersList />);
+    const followerDivElement = await screen.findByTestId("follower-item-0");
     expect(followerDivElement).toBeInTheDocument();
   });
 
